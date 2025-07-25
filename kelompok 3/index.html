@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelompok 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        .navbar-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #f4f6f8;
+            padding: 20px 0;
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1100px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 15px 30px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #1e3a8a;
+            color: #fff;
+        }
+
+        .content {
+            padding: 50px 30px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .content h1 {
+            font-size: 32px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- Navbar -->
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="logo"><b>"Il gatto fa le uova"</b></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="clients & partners.html">Client & Partner</a></li>
+                <li><a href="news.html">Blog/News</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Konten -->
+    <div class="content">
+        <h1>Selamat Datang!</h1>
+        <p>Selamat datang di web <b>"Il gatto fa le uova"</b> disini adalah web tentang penelitian hewan-hewan</p>
+
+        <div class="card">
+            <h2>Layanan Kami</h2>
+            <p>Kami selalu melaksanakan projek yang terkait dengan dunia hewan.</p>
+        </div>
+    </div>
+
 </body>
 </html>
