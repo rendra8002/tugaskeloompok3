@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #eef2f6; /* Soft light background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Navigation Bar (Navbar) --- */
+        .navbar {
+            background-color: #2c3e50; /* Dark blue-grey */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky; /* Navbar tetap di atas saat digulir */
+            top: 0;
+            z-index: 1000; /* Pastikan navbar di atas elemen lain */
+        }
+
+        .navbar .logo {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-left: 30px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: #007bff; /* Blue underline */
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: #007bff; /* Blue on hover */
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Clients & Partners Section (from previous code) --- */
+        .modern-clients-partners {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ffffff, #f0f4f8); /* Gradient background */
+            margin: 40px auto;
+            max-width: 1000px; /* Max width for content */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Softer shadow */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modern-clients-partners h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #2c3e50; /* Strong heading color */
+            position: relative;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif; /* Poppins for headings */
+        }
+
+        .modern-clients-partners h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: #007bff; /* Blue underline */
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .logo-grid {
+            display: grid; /* Using Grid for layout */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+            gap: 30px; /* Space between logos */
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px; /* Side padding for grid */
+        }
+
+        .logo-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e6ed;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-8px) scale(1.02); /* Lift and slightly enlarge effect */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* More dramatic shadow */
+            background-color: #f7f9fc; /* Slightly change background */
+        }
+
+        .logo-card img {
+            max-width: 120px; /* Max logo size */
+            height: auto;
+            margin-bottom: 10px; /* Space between logo and text */
+            filter: grayscale(90%); /* Very grayscale */
+            opacity: 0.7;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .logo-card:hover img {
+            filter: grayscale(0%); /* Full color on hover */
+            opacity: 1;
+        }
+
+        .logo-card p {
+            font-size: 0.9em;
+            color: #555;
+            font-weight: 600; /* Bold text for logo name */
+            margin: 0;
+            text-align: center;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar .logo {
+                margin-bottom: 15px;
+            }
+            .navbar-links {
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar-links li {
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-links a {
+                display: block;
+                padding: 10px 0;
+            }
+
+            .modern-clients-partners {
+                padding: 40px 15px;
+                margin: 20px auto;
+            }
+            .modern-clients-partners h2 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+            .logo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+            }
+            .logo-card img {
+                max-width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+            .navbar .logo {
+                font-size: 1.5em;
+            }
+
+            .modern-clients-partners h2 {
+                font-size: 1.8em;
+            }
+            .logo-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns on very small screens */
+            }
+            .logo-card {
+                padding: 15px;
+            }
+            .logo-card img {
+                max-width: 80px;
+            }
+            .logo-card p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Projek Kelompok 3</a>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="clients.html">Clients & Prtners</a></li>
+            <li><a href="news.html">Blog/News</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="modern-clients-partners" id="clients">
+        <h2>Clients & Partners</h2>
+        <div class="logo-grid">
+            <div class="logo-card">
+                <p>Perusahaan A</p>
+            </div>
+            <div class="logo-card">
+                <p>Startup X</p>
+            </div>
+            <div class="logo-card">
+                <p>Global Corp</p>
+            </div>
+            <div class="logo-card">
+                <p>Digital Agency</p>
+            </div>
+            <div class="logo-card">
+                <p>Tech Innovators</p>
+            </div>
+            </div>
+    </section>
+
+</body>
+</html>
